@@ -10,6 +10,7 @@ spring:
     password: ${DB_PASSWORD:MyFitness_Db_2026_Secure#}
     driver-class-name: org.postgresql.Driver
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     hibernate:
       ddl-auto: update
