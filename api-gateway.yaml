@@ -8,21 +8,11 @@ spring:
     redis:
       host: ${SPRING_DATA_REDIS_HOST:redis}
       port: 6379
-  cloud:
-    gateway:
-      routes:
-        - id: auth-service
-          uri: http://myfitness-auth:8080
-          predicates:
-            - Path=/api/v1/auth/**
-        - id: catalog-service
-          uri: http://myfitness-catalog:8080
-          predicates:
-            - Path=/api/v1/exercises/**
-        - id: workout-service
-          uri: http://myfitness-workout:8080
-          predicates:
-            - Path=/api/v1/workouts/**
+
+services:
+  auth-url: http://auth-service:8080
+  catalog-url: http://catalog-service:8080
+  workout-url: http://workout-service:8080
 
 jwt:
   key: ${JWT_SECRET_KEY:V_[L9Ocy>bIZfbBIV_[L9Ocy>bIZfbBIV_[L9Ocy>bIZfbBIV_[L9Ocy>bIZfbBI}
