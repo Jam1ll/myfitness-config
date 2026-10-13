@@ -19,15 +19,15 @@ spring:
         - id: auth-service
           uri: http://auth-service:8080
           predicates:
-            - Path=/auth/**
+            - Path=/api/v1/auth/**
         - id: catalog-service
           uri: http://catalog-service:8080
           predicates:
-            - Path=/catalog/**
+            - Path=/api/v1/catalog/**
         - id: workout-service
           uri: http://workout-service:8080
           predicates:
-            - Path=/workouts/**
+            - Path=/api/v1/workout/**
 
 jwt:
   key: ${JWT_SECRET_KEY:V_[L9Ocy>bIZfbBIV_[L9Ocy>bIZfbBIV_[L9Ocy>bIZfbBIV_[L9Ocy>bIZfbBI}
