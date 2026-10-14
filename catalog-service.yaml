@@ -23,10 +23,17 @@ management:
   endpoint:
     health:
       show-details: always
+    probes:
+        enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
   tracing:
     sampling:
       probability: 1.0
     export:
       zipkin:
         enabled: true
-        endpoint: http://zipkin:9411/api/v2/spans
+        endpoint: ${MANAGEMENT_TRACING_EXPORT_ZIPKIN_ENDPOINT:http://zipkin:9411/api/v2/spans}
