@@ -4,7 +4,7 @@ server:
 spring:
   data:
     redis:
-      host: redis-deployment
+      host: redis
       port: 6379
   cache:
     type: redis
