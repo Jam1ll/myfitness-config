@@ -26,10 +26,16 @@ spring:
           predicates:
             - Path=/api/v1/workouts/**
 
+        - id: session-service
+          uri: http://session-service:8080
+          predicates:
+            - Path=/api/v1/sessions/**
+
 services:
   auth-url: http://auth-service:8080
   catalog-url: http://catalog-service:8080
   workout-url: http://workout-service:8080
+  session-url: http://session-service:8080
 
 jwt:
   key: ${JWT_SECRET_KEY:V_[L9Ocy>bIZfbBIV_[L9Ocy>bIZfbBIV_[L9Ocy>bIZfbBIV_[L9Ocy>bIZfbBI}
